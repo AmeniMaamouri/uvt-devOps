@@ -1,0 +1,15 @@
+{
+    "name": "uvt-devops",
+    "version": "1.0.0",
+    "description": "project uvt devOps",
+    "author": "Ameni",
+    "main": "main.js",
+    "scripts": {
+      "test": "jest"
+      },
+    "keywords": [
+    ],
+    "dependencies": {
+      "jest": "^29.7.0"
+    }
+  }
