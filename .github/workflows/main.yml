@@ -6,7 +6,7 @@ on:
       - 'main'
 
 jobs:
-  docker:
+  init:
     runs-on: ubuntu-latest
     steps:
       -
@@ -24,6 +24,11 @@ jobs:
       - 
         name: Check
         uses: actions/checkout@v2
+
+  build-deploy:
+     runs-on: ubuntu-latest
+     needs: init
+     steps:
       -      
         name: Build and push
         uses: docker/build-push-action@v3
@@ -32,6 +37,11 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: amenimaamouri/uvt-devops:1.0.${{github.run_number}}
+
+  test:
+     runs-on: ubuntu-latest
+     needs: build-deploy
+     steps:      
       - 
         name: Check NodeJS
         uses: actions/checkout@v2 
@@ -43,7 +53,6 @@ jobs:
       - 
         name: Install jest
         run: npm install
-   
       - 
         name: Test
         run: npm test
