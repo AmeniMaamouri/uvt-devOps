@@ -1,5 +1,5 @@
 const CalculationOperations = {
-//testssss  s
+//testsss
 Add: function(a,b) {
     
  return a + b;
