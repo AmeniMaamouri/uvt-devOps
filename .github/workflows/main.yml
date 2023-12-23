@@ -52,7 +52,7 @@ jobs:
         name: Test
         run: npm test
 
-deploy-to-azure-app:
+  deploy-to-azure-app:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Source
